@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="vehicles_menu_root" name="Vehicles">
+      <menuitem id="vehicles_vehicles_menu" name="Vehicles">
+        <menuitem id="vehicles_vehicles_menu_action" action="vehicles_vehicles_action" name="Vehicles" ></menuitem>
+      </menuitem>
+    </menuitem>
+</odoo>
