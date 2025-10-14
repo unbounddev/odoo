@@ -5,4 +5,19 @@
     <field name="res_model">vehicles.vehicle</field>
     <field name="view_mode">list,form</field>
 </record>
+
+<record id="vehicles_vehicles_view_tree" model="ir.ui.view">
+    <field name="name">vehicles.vehicle.list</field>
+    <field name="model">vehicles.vehicle</field>
+    <field name="arch" type="xml">
+        <list string="Vehicles">
+            <field name="license"/>
+            <field name="vin"/>
+            <field name="year"/>
+            <field name="make"/>
+            <field name="model"/>
+            <field name="mileage"/>
+        </list>
+    </field>
+</record>
 </odoo>
