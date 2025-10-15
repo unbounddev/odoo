@@ -7,6 +7,7 @@
   'data': [
         'security/ir.model.access.csv',
         'views/vehicles_vehicles_views.xml',
-        'views/vehicles_menu_views.xml'
+        'views/vehicles_menu_views.xml',
+        'views/partner_view.xml'
   ]
 }
