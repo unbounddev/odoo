@@ -13,11 +13,35 @@
         <list string="Vehicles">
             <field name="license"/>
             <field name="vin"/>
-            <field name="year"/>
+            <field name="year" widget="char"/>
             <field name="make"/>
             <field name="model"/>
             <field name="mileage"/>
         </list>
+    </field>
+</record>
+
+<record id="vehicles_vehicles_view_form" model="ir.ui.view">
+    <field name="name">vehicles.vehicle.form</field>
+    <field name="model">vehicles.vehicle</field>
+    <field name="arch" type="xml">
+        <form string="Vehicles">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="year" options="{'type': 'number'}"/>
+                        <field name="make"/>
+                        <field name="model"/>
+                        <field name="customer_id"/>
+                    </group>
+                    <group>
+                        <field name="mileage" options="{'type': 'number'}"/>
+                        <field name="license"/>
+                        <field name="vin"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
     </field>
 </record>
 </odoo>

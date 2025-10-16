@@ -4,10 +4,10 @@ class VehiclesVehicle(models.Model):
     _name = 'vehicles.vehicle'
     _description = 'Vehicle Model'
 
-    year = fields.Integer()
+    year = fields.Integer(default=fields.Date.today().year)
     make = fields.Char()
     model = fields.Char()
-    mileage = fields.Integer()
+    mileage = fields.Integer(default=0)
     vin = fields.Char()
     license = fields.Char()
     customer_id = fields.Many2one("res.partner", string="Customer")
