@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:24.04 
+FROM ubuntu:24.04
 WORKDIR /app
 RUN apt-get update
 RUN apt-get install python3 python3-pip -y

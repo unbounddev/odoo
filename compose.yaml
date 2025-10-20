@@ -1,0 +1,41 @@
+services:
+  asp:
+    build: .
+    ports:
+      - 8069:8069
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - .:/app
+    networks:
+      - backend
+    environment:
+      DB_HOST: db
+      DB_USER: asp
+      DB_PASSWORD: asp
+      DB_NAME: asp
+      ODOO_ADDONS: "/app/addons"
+      ODOO_DATA: "/app/odoo-data"
+      ODOO_CONFIG: "/app/.odoorc"
+    restart: always
+  db:
+    image: postgres:18-alpine
+    volumes:
+      - ./postgres-data:/var/lib/postgresql
+    networks:
+      - backend
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: asp
+      POSTGRES_USER: asp
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+    restart: always
+networks:
+  backend:
